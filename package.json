@@ -22,6 +22,10 @@
     "cli"
   ],
   "author": "talmobi <talmo.christian@gmail.com>",
+  "contributors": [{
+    "name": "Hank Chan",
+    "email": "hankchanth@icloud.com"
+  }],
   "license": "MIT",
   "private": false,
   "repository": {
