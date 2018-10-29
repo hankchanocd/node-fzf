@@ -11,7 +11,21 @@
     "src/index.js"
   ],
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "npm-run-all jest eslint --parallel --silent",
+    "test:watch": "npm run jest:watch",
+    "watch": "npm run test:watch",
+    "eslint": "eslint . --ignore-path .gitignore --cache --cache-location \"./eslint/.eslintcache\" ",
+    "eslint:makeHtml": "npm run eslint -- --format html -o ./eslint/report.html",
+    "eslint:open": "npm run eslint:makeHtml --silent && opn ./eslint/report.html",
+    "jest": "jest",
+    "jest:watch": "jest --watch",
+    "jest:coverage": "jest --coverage"
+  },
+  "jest": {
+    "collectCoverage": true,
+    "coverageReporters": [
+      "html"
+    ]
   },
   "keywords": [
     "node-fzf",
@@ -22,10 +36,12 @@
     "cli"
   ],
   "author": "talmobi <talmo.christian@gmail.com>",
-  "contributors": [{
-    "name": "Hank Chan",
-    "email": "hankchanth@icloud.com"
-  }],
+  "contributors": [
+    {
+      "name": "Hank Chan",
+      "email": "hankchanth@icloud.com"
+    }
+  ],
   "license": "MIT",
   "private": false,
   "repository": {
@@ -44,5 +60,11 @@
     "string-width": "~2.1.1",
     "ttys": "0.0.3"
   },
-  "devDependencies": {}
+  "devDependencies": {
+    "eslint": "^5.8.0",
+    "eslint-plugin-import": "^2.14.0",
+    "eslint-plugin-jest": "^21.26.2",
+    "jest": "^23.6.0",
+    "opn-cli": "^3.1.0"
+  }
 }

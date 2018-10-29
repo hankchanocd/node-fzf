@@ -103,10 +103,10 @@ function start(_list, callback) {
 				// ref: https://ss64.com/bash/syntax-keyboard.html
 			case 'down':
 			case 'enter':
-				selectionOffset += 1
+				selectionOffset += 1;
 				return render();
 			case 'up':
-				selectionOffset -= 1
+				selectionOffset -= 1;
 				return render();
 			case 'esc':
 			case 'escape':
@@ -242,7 +242,7 @@ function start(_list, callback) {
 					if (index > endIndex) continue;
 
 					const c = paint.clc(t[index]);
-					t = t.slice(0, index) + c + t.slice(index + 1)
+					t = t.slice(0, index) + c + t.slice(index + 1);
 				}
 
 				results.push({
@@ -329,9 +329,9 @@ function start(_list, callback) {
 			paddingBottom = 1;
 		}
 
-		const startIndex = Math.max(0, offset - maxPrintLength + paddingBottom)
+		const startIndex = Math.max(0, offset - maxPrintLength + paddingBottom);
 
-		const matchLimit = Math.min(maxPrintLength + startIndex, matches.length)
+		const matchLimit = Math.min(maxPrintLength + startIndex, matches.length);
 
 		// print matches
 		for (let i = startIndex; i < matchLimit; i++) {
