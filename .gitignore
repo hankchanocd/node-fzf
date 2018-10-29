@@ -1,7 +1,24 @@
+# Default
+tags
+*.log
+
+# Text Editor
+.vscode/
+
+# npm
 node_modules
 
 # vim files
 *.sw?
+
+# Jest
+coverage/
+
+# Coverage
+.nyc_output/
+
+# Eslint
+eslint/
 
 # mac files
 *.DS_Store
